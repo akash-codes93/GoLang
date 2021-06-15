@@ -87,4 +87,12 @@ func main() {
 	s1 = append(s1[:4], 200) // overwrites the last element
 	fmt.Println(s1)          // -> [1 2 3 4 200]
 
+	var nums1 []int
+	// nums1 :=  []int{}
+	fmt.Printf("%#v\n", nums1)
+	fmt.Printf("Length: %d, Capacity: %d\n", len(nums1), cap(nums1))
+
+	nums1 = append(nums1, 1, 2)
+	fmt.Printf("Length: %d, Capacity: %d\n", len(nums1), cap(nums1))
+
 }
