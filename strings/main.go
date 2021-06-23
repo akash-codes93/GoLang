@@ -55,19 +55,54 @@ akashnew
 	// String slicing returns bytes, not runes. s1[0:3] means bytes at index 0, 1 and 2. Non-ascii letters are represented on more than one byte.
 
 	s3 := "abcdefghijkl"
-    fmt.Println(s3[2:5]) // -> cde, bytes from 2 (included) to 5 (excluded)
- 
-    s4 := "中文维基是世界上"
-    fmt.Println(s4[0:2]) // -> � - the unicode representation of bytes from index 0 and 1.
- 
-    // returning a slice of runes
-    // 1st step: converting string to rune slice
-    rs := []rune(s4)
-    fmt.Printf("%T\n", rs) // => []int32
- 
-    // 2st step: slicing the rune slice
-    fmt.Println(string(rs[0:3])) // => 中文维
+	fmt.Println(s3[2:5]) // -> cde, bytes from 2 (included) to 5 (excluded)
 
-	
+	s4 := "中文维基是世界上"
+	fmt.Println(s4[0:2]) // -> � - the unicode representation of bytes from index 0 and 1.
+
+	// returning a slice of runes
+	// 1st step: converting string to rune slice
+	rs := []rune(s4)
+	fmt.Printf("%T\n", rs) // => []int32
+
+	// 2st step: slicing the rune slice
+	fmt.Println(string(rs[0:3])) // => 中文维
+
+	// coding exercise
+
+	var name = "akash"
+	country := "India"
+	p := fmt.Printf
+	pl := fmt.Println
+	p("Your name: %s\nCountry: %s\n", name, country)
+
+	r := []rune("ă")
+	pl(r)
+
+	ma := "ma"
+	m := "m"
+
+	mother := ma + m + string(r)
+	pl(mother)
+
+	q3 := "țară means country in Romanian"
+
+	for _, r := range q3{
+		p("%c", r)
+	}
+	pl()
+
+	s := "你好 Go!"
+
+	// converting string to byte slice
+	b := []byte(s)
+
+	// printing out the byte slice
+	fmt.Printf("%#v\n", b)
+
+	// iterating over the byte slice and printing out each index and byte in the byte slice
+	for i, v := range b {
+		fmt.Printf("%d -> %d\n", i, v)
+	}
 
 }
