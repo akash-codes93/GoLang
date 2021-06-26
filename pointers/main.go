@@ -81,7 +81,7 @@ func main() {
 		productName: "Toffee",
 	}
 	pl("before calling change product: ", gift)
-	// changeProduct(gift)
+	// changeProduct(gift) // does not have any affect :: call by value
 	changeProductByPointer(&gift)
 	pl("after calling change product: ", gift)
 
